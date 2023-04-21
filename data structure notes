@@ -431,9 +431,7 @@ Empty languages: set()
 
 SET OPERATORS
 
-Sets in Python 3 can be used to do sophisticated calculations in the same way that their mathematical equivalent can.
-
-Because sets are mutable, the majority of these operators will have a method counterpart.
+Sets in Python  can be used to do smart calculations in the same way that their mathematical equivalent can. ecause sets are mutable, the majority of these operators will have a method counterpart.
 
 
 To make our life easier, we will demonstrate these operators with a set of strings, although this may easily be done with any type of set.
@@ -662,7 +660,7 @@ a &= b # same as: a.intersection_update(b)
 print('Intersection Update:', a)
 
     Difference and Update --> Update the set, removing elements found in others.
-a = set('abracadabra')
+a = set('hello')
 b = set('alacazam')
 
 a -= b # same as: a.difference_update(b)
@@ -696,10 +694,7 @@ Palindromic Numbers Set from 1 to 10000:
 
 CONCLUSION FOR SET NOTES
 
-Sets cannot be sliced or indexed.
-Sets cannot contain other sets.
-Sets do not have order; nor does the order of insertion guarantee that their values will be in order.
-Sets do not keep track of a value's position.
+Sets cannot be sliced or indexed, Sets cannot contain other sets, Sets do not have order; nor does the order of insertion guarantee that their values will be in order, Sets do not keep track of a value's position.
    
   
   DICTIONARY IN PYTHON 3\
@@ -750,7 +745,7 @@ we can do this by refrencing the key, adding values by creating a new key, or ov
 
 DELETION OF DICTIONARY
 
-this can be done by delting the value connected to a key. Empting out a entire dictionary, or just deleting it,
+this can be done by deleting the value the value connected to a key. Empting out a entire dictionary, or just deleting it,
 
 example: 
  Deletion Example
@@ -841,13 +836,13 @@ sammy_copy2: {'username': 'sammy', 'online': True, 'followers': 42, 'verified': 
 --
 
 METHODS WITH DICTIONARY
-A.keys() –> Returns a sequence of keys/addresses in A
+A.keys() WILL  RETURN a sequence of keys/addresses in A
 A.values() –> Returns a sequence of item values in A
 A.items() –> Returns a sequence of key,item pairs in A
 A.get(address) –> Returns the item value at address
 A.update(B) –> Extends A with the dictionary of key,value pairs of B
 
-EXAMPLE
+EXAMPLE OF USING THESE METHODS
 
 
 
@@ -900,14 +895,14 @@ Sammy Dict key, value pairs as a list: [('username', 'sammy'), ('online', True),
 Sammy followers value: 42
 Same as: 42
 --
-Sammy extended with its hidden values: {'username': 'sammy', 'online': True, 'followers': 42, 'pwd': 'qwerty', 'location': 'Toronto, Ontario'}
+the username sammy is extended with its hidden values: {'username': 'sammy', 'online': True, 'followers': 42, 'pwd': 'qwerty', 'location': 'Toronto, Ontario'}
 
 iTERATING THROUGH A DICT
 
 We will be taking advantage of three iteration methods
 iterating the keys
 iterating the values
-iterating the key, value pairs by unpacking
+iterating the key, value pairs by unpacking them 
 # Iteration Example 1: Keys
 sammy = {
     'username': 'sammy',
@@ -918,14 +913,13 @@ sammy = {
 for k in sammy.keys():
     print('Current key:', k)
 print('--\n')
-
 # Iteration Example 2: Values
 
 for v in sammy.values():
     print('Current value:', v)
 print('--\n')
 
-# Iteration Example 3: Key, Value Pair
+ Iteration Example 3: Key, Value Pair
 
 for k, v in sammy.items():
     print('Current Key:', k)
@@ -965,8 +959,8 @@ data_dict = dict(example_data)
 print('data_dict:', data_dict)
 print('--')
 
-# Dictionary Comprehension
-# Goal: Take string numerals and assign them with their integer square
+DICTIONARY COMPREHENSION
+THE Goal IS TO Take string numerals and assign them with their integer square
 # - keys : string numerals
 # - values: integer squares
 
