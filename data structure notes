@@ -1,14 +1,13 @@
 MATRICS & LIST COMPREHENSION
 
-# MATRIX
+ MATRIX
 
-# Matrix: is a representation of numbers, symbols or expressions in a 2 dimensional array. 
+Matrix: is a representation of numbers, symbols or expressions in a 2 dimensional array. 
+Can create data structers that has values in rows and columns, much like a table.
 
-# Can create data structers that has values in rows and columns, much like a table.
+is a list within a list
 
-# a list within a list
-
-# Representation of matrix
+EXAMPLE OF Representation of matrix
 
 matrix_A = [
     [1,2,3,4,5],
@@ -18,50 +17,48 @@ matrix_A = [
 # Accesing our matrix
 print('row1:', matrix_A[0])
 print('Row 2 Column 2:', matrix_A[1][1])
+ rules of matrix
 
-# rules of matrix
-'''
 - All rows must have the same number of values
 - All columns must have the same number of values
 - All items in the 2D List must have the same data types
 - Since indexing always starts at 0 ... row 1 is technically located at matrix_A[0]
-'''
 
-# LIST COMPREHENSION
+ LIST COMPREHENSION
 
-# list comprehension is a conise method to create list in python 3.
+ list comprehension is a conise method to create list in python 3.
 
-# Used when
-'''
+USED WHEN
+
 -The list is a result of some operations applied to all its items
 -It is a made from another sequence/iterable data
 -The list is member of another list/sequence/iterable data that satisfies a certain condition
-'''
-# Normal way
+
+ Normal way
 squares = []
 for i in range(10):
     squares.append(i**2)
 print('our result', squares)
 
-# List comprehension way
+ List comprehension way
 squares = [i**2 for i in range(10)]
 print('our result', squares)
 
-# How it works:
-'''
+ How it works:
+
 -A Square Bracket containing an expression that describes the list
 -One or more For clause to explain its members
 -Then a zero or more if clauses depending on the complexity of the list
-'''
-# i**2 for i in range(10) --> is the expression that describes the list.
 
-# i**2 describes each item in the list
+ i**2 for i in range(10) --> is the expression that describes the list.
 
-# i is taken from the clause 
+i**2 describes each item in the list
 
-# for i in range(10) describes where i comes from.
+i is taken from the clause 
 
-# EXAMPLE 2
+ for i in range(10) describes where i comes from.
+
+ EXAMPLE 2
 
 a = [1,2,3]
 b = [3,1,4]
@@ -69,49 +66,43 @@ b = [3,1,4]
 result = [[x,y] for x in a for y in b if x !=y]
 print(result)
 
-# x comes from a
-# y comes from b
-
-# EXAMPLE 3
+ x comes from a
+ y comes from b
+ EXAMPLE 3
 
 vec = [[1,2,3], [4,5,6], [7,8,9,]]
 result = [value for row in vec for value in row]
 print(result)
 
-# vec is an example of a matrix in python 3 by uding list of lists
+ vec is an example of a matrix in python 3 by uding list of lists
 
-# to grab each value we must explain what each item in the list comprehension is going to be. named value.
-# to access value where value is, define where it comes from in our case --. 'row'; there we use 'for row in vec'. finally we use our last clause to denote that value comes from the row.
+ to grab each value we must explain what each item in the list comprehension is going to be. named value.
+ to access value where value is, define where it comes from in our case --. 'row'; there we use 'for row in vec'. finally we use our last clause to denote that value comes from the row.
 
-# CLAUSES MATTER.
+ CLAUSES MATTER.
 
 
 MAP & FILTER
 
-# the idea of a map function is to apply a function to an iterable data type.
+ the idea of a map function is to apply a function to an iterable data type.
 
-# formatting: map(function_name, sequence)
+formatting: map(function_name, sequence)
 
-# - where the function name is any function (built in or not) that returns a desired value of choice
-# - sequence is an iterable data type
+ - where the function name is any function (built in or not) that returns a desired value of choice
+ - sequence is an iterable data type
 
-# EXAMPLE
-
+EXAMPLE
 def square(num):
     # square is the given num argument
     return num ** 2
 array = list(range(1,11))
 square_array = list(map(square, array))
-# takes value from square function 
+takes value from square function 
 print('array sqaured', square_array)
 
-# our original array is just a count up to 11
+-our original array is just a count up to 11. Also our sqared array is the numbers to 11 squared map functions dont return a specific data type, but rather an iterabele data type.
 
-# our sqared array is the numbers to 11 squared
-
-# map functions dont return a specific data type, but rather an iterabele data type.
-
-# EXAMPLE 2
+ EXAMPLE 2
 
 def upper(x):
     # upper returns string x into upper case
@@ -121,11 +112,11 @@ upper_word = ''.join(list(map(upper, word)))
 print(word)
 print(upper_word)
 print(word.upper())
-'''
+
 In Example 2, we perform a lot of extra effort to make our original word variable uppercase. This is an example of why you shouldn't use map() to make minor modifications to a string.
 
 This holds true for every data structure with methods. You don't want to use methods with map since there is a good chance that there is already a method for what you want to achieve
-'''
+
 
 FILTER FUNCTION
 The idea is to filter out items from a data set that meets a certain condition
@@ -280,10 +271,10 @@ print('--')
 array_array[0][0] = 'p'
 print(array_array)
 
-# these function work the same way they do for other data types.
+ these function work the same way they do for other data types.
 
 TUPLE COMPREHENSION
-# Tuple of Even values from 1 to 100
+ Tuple of Even values from 1 to 100
 even_tup = tuple(i for i in range(1,101) if i % 2 == 0)
 
 print(even_tup)
@@ -292,7 +283,6 @@ PRINTS OUT ALL EVEN VALUES FROM 1 - 100
 
 TUPLE PACKING AND UNPACKING
 
-# Examine the following code
 
 # Packing
 var_1 = 2
@@ -409,7 +399,7 @@ ADDING VALUES AND REMOVING VALUES IN SET
 
 Sets are mutable; therefore, we can add and remove values
 There are also methods much lists that can affect the original sets as well
-# Adding and Removing Values
+ Adding and Removing Values
 languages = set() # empty set initialization
 
 programming_languages = ['C', 'C#', 'Java', 'Python', 'HTML', 'CSS', 'JavaScript', 'Haskell']
@@ -424,7 +414,7 @@ languages.discard('HTML') # looks for the target value, if found, it will remove
 print('HTML deleted:', languages)
 
 languages.remove('CSS') # remove can be used to delete a value;
-# only difference is it will raise an error if the target is not found
+ only difference is it will raise an error if the target is not found
 print('CSS deleted:', languages)
 
 random_remove = languages.pop() # .pop() method deletes a random value and return the value ... not recommended
@@ -461,18 +451,18 @@ Superset
 
 Union: The joining/combining of two sets.
 
-# Union Example:
+ Union Example:
 set1 = set('hello')
 set2 = set('world')
 
 result = set1 | set2 # | is the union operator ... all the members of both set are combined to a single set
-# Recall that: there are no duplicates
+ Recall that: there are no duplicates
 print('set1 union set 2:', result)
 set1 union set 2: {'h', 'w', 'e', 'r', 'l', 'd', 'o'}
 
 Intersection: Members/Items that only exists in both sets.
 
-# Union Example:
+Union Example:
 set1 = set('hello')
 set2 = set('world')
 
@@ -481,7 +471,7 @@ print('Intersection of set1 and set2:', result)
 Intersection of set1 and set2: {'o', 'l'}
 Difference: Members/items that only exists in the first set and not the second set.
 
-# Difference Example:
+Difference Example:
 set1 = set('hello')
 set2 = set('world')
 
@@ -494,7 +484,7 @@ set1 - set2: {'e', 'h'}
 set2 - set1: {'w', 'd', 'r'}
 Symmetric Difference: Members/items that exists one or the other set, but not both sets
 
-# Symmetric Difference Example:
+ Symmetric Difference Example:
 set1 = set('hello')
 set2 = set('world')
 
@@ -505,7 +495,7 @@ Symmetric Difference of: {'e', 'h', 'w', 'd', 'r'}
 Proper Subset: This is a boolean operator.
 
 A is proper subset of B if all members of A is found in B, but A cannot be exactly the same as B
-# Proper Subset Example:
+ Proper Subset Example:
 set1 = {1,2,3}
 set2 = {1,2,3,4}
 set3 = {1,2,3}
@@ -568,12 +558,12 @@ Is set1 superset of set4?: False
   Two set are consided disjointed when two sets share no common value.
 
 Let A and B both represent a set.
-If A & B is empty, then set A and B are considered disjointed.
+If A & B has nothing in it, then set A and B are considered disjointed.
 To check this in python there is a method called: isdisjoint()
 Recall: & is the intersection operator
 
-# Disjoint Example
-# .isdisjoint() is a set method to check for such property between two sets.
+Disjoint Example
+.isdisjoint() is a set method to check for such property between two sets.
 
 set1 = {1,2,3,4}
 set2 = {5,6,7}
@@ -590,48 +580,48 @@ set1 intersect set3: {1, 2, 3, 4}
 set 1 disjoint set 2 check: True
 set 1 disjoint set 3 check: False
 Set Operators as Methods
-# Union
+Union
 a = set('abracadabra')
 b = set('alacazam')
 
 a.union(b)
 print('Union:', a)
 
-# Intersection
+Intersection
 a = set('abracadabra')
 b = set('alacazam')
 
 a.intersection(b)
 print('Intersection:', a)
 
-# Difference
+ Difference
 a = set('abracadabra')
 b = set('alacazam')
 
 a.difference(b)
 print('Difference:', a)
 
-# Symmeteric Difference
+ Symmeteric Difference
 a = set('abracadabra')
 b = set('alacazam')
 
 a.symmetric_difference(b)
 print('Symmetric Difference:', a)
 
-# Subset
+Subset
 a = set('abracadabra')
 b = set('alacazam')
 
 print('Subset:', a.issubset(b))
 
-# Superset
+Superset
 a = set('abracadabra')
 b = set('alacazam')
 
 print('Superset:', a.issuperset(b))
 print('--')
 
-# There are no proper subset/superset methods
+There are no proper subset/superset methods
 
 # copy
 a = set('abracadabra')
@@ -657,21 +647,21 @@ set c: {'b', 'a', 'z', 'r', 'd', 'c'}
 Assignment Operation & Updating Methods
 
 This is a way to affect an original set with another and assign the result back to the original set
-# Union and Update --> Update the set, adding elements from all others.
+Union and Update --> Update the set, adding elements from all others.
 a = set('abracadabra')
 b = set('alacazam')
 
 a |= b # same as: a.update(b)
 print('Union Update:', a)
 
-# Intersection and Update --> Update the set, keeping only elements found in it and all others.
+ Intersection and Update --> Update the set, keeping only elements found in it and all others.
 a = set('abracadabra')
 b = set('alacazam')
 
 a &= b # same as: a.intersection_update(b)
 print('Intersection Update:', a)
 
-# Difference and Update --> Update the set, removing elements found in others.
+    Difference and Update --> Update the set, removing elements found in others.
 a = set('abracadabra')
 b = set('alacazam')
 
