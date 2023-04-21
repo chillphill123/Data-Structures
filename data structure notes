@@ -711,5 +711,281 @@ Sets cannot contain other sets.
 Sets do not have order; nor does the order of insertion guarantee that their values will be in order.
 Sets do not keep track of a value's position.
    
-   
+  
+  DICTIONARY IN PYTHON 3\
+  
+  dictionary is a data type that stores a collection (key,value) paris such that each key appears once in the collection.
+  
+  SOME IF ITS OPERATIONS:
+
+-Adding a pair
+-Removing a pair
+-Modify an existing pair
+-lookup of a value associated with a particular key
+
+DEFINING IT
+
+dict use {} like sets , however their individual item format is very different ( each item in dictionary be a pair of key: value.)
+
+# Dictionary Example
+sammy = {
+    'username': 'sammy',
+    'online': True,
+    'followers': 42
+}
+
+# There are 3 items: each with their unique addresses and value
+# Accessing
+print('Sammy dict:', sammy)
+print('Username:', sammy['username'])
+print('Online Status:', sammy['online'])
+print('Follower Count:', sammy['followers'])
+
+OUTPUT WILL BE 
+
+Sammy dict: {'username': 'sammy', 'online': True, 'followers': 42}
+Username: sammy
+Online Status: True
+Follower Count: 42
+
+KEY PROPERTYS OF DICT
+
+must be immutable and unique( two same key values cannot exist in the same dictionary)
+
+value: values of a dictionary within a key can be any data type.
+
+MODYFING DICTIONAY
+
+we can do this by refrencing the key, adding values by creating a new key, or overrridng a value at an existing key.
+
+DELETION OF DICTIONARY
+
+this can be done by delting the value connected to a key. Empting out a entire dictionary, or just deleting it,
+
+example: 
+ Deletion Example
+
+sammy = {
+    'username': 'sammy',
+    'online': True,
+    'followers': 42
+}
+
+del sammy['followers'] # del is a keyword used to help us to execute a removal
+print('followers key deleted:', sammy)
+
+sammy.clear() # {} is considered an empty dict
+print('emptying out a dictionary', sammy)
+print('--\n\n')
+
+del sammy
+print('Deleting sammy, should create an error when referenced again', sammy)
+
+
+ MEMBERSHIP WITH DICTIONARY
+ 
+ We can use the in and not in operators to check if a key exists in a dictionary
+
+# Membership Example
+
+sammy = {
+    'username': 'sammy',
+    'online': True,
+    'followers': 42
+}
+
+print('Checking for key username:', 'username' in sammy)
+print('Checking if followers is not a key:', 'followers' not in sammy)
+Checking for key username: True
+Checking if followers is not a key: False
+
+
+
+
+
+
+Built-in Functions AND INTERACTIONS WITH DICT.
+
+sammy = {
+    'username': 'sammy',
+    'online': True,
+    'followers': 42
+}
+
+print('Size of sammy dict:', len(sammy))
+print('Largest Key:', max(sammy))
+print('Smallest Key:', min(sammy))
+print('Dict to string:', str(sammy))
+print('Dict to list:', list(sammy))
+Size of sammy dict: 3
+Largest Key: username
+Smallest Key: followers
+Dict to string: {'username': 'sammy', 'online': True, 'followers': 42}
+Dict to list: ['username', 'online', 'followers']
+
+DUPLICATING DICT EXAMPLE:
+# Duplicate a Dictionary
+
+sammy = {
+    'username': 'sammy',
+    'online': True,
+    'followers': 42
+}
+
+sammy_copy1 = sammy.copy()
+sammy_copy2 = sammy
+
+sammy['verified'] = True
+
+print('sammy_copy1:', sammy_copy1)
+print('sammy_copy2:', sammy_copy2)
+print('--')
+
+# Duplicate keys only
+
+tammy = tammy.fromkeys(sammy) # Notice that all key's values are None ... aka empty
+
+print('tammy dict:', tammy)
+sammy_copy1: {'username': 'sammy', 'online': True, 'followers': 42}
+sammy_copy2: {'username': 'sammy', 'online': True, 'followers': 42, 'verified': True}
+--
+
+METHODS WITH DICTIONARY
+A.keys() –> Returns a sequence of keys/addresses in A
+A.values() –> Returns a sequence of item values in A
+A.items() –> Returns a sequence of key,item pairs in A
+A.get(address) –> Returns the item value at address
+A.update(B) –> Extends A with the dictionary of key,value pairs of B
+
+EXAMPLE
+
+
+
+sammy = {
+    'username': 'sammy',
+    'online': True,
+    'followers': 42
+}
+
+sammy_hidden = {
+    'pwd' : 'qwerty',
+    'location' : 'Toronto, Ontario'
+}
+
+# printing all the keys of a dict
+print('Sammy Dict Keys:', sammy.keys()) # notice how it prints
+
+sammy_keys = list(sammy.keys()) # we can listify the .keys() returned
+print('List of sammy_keys', sammy_keys)
+print('--')
+
+# printing all the values of a dict
+print('Sammy Dict Values:', sammy.values())
+print('Sammy Dict Values as a list:', list(sammy.values()))
+print('--')
+
+# printing key, value pair of a dict
+print('Sammy Dict key, value pairs:', sammy.items())
+print('Sammy Dict key, value pairs as a list:', list(sammy.items()))
+print('--')
+
+# getting a value from a dict
+print('Sammy followers value:', sammy.get('followers'))
+print('Same as:', sammy['followers'])
+print('--')
+
+# updating / extending a dictionary
+sammy.update(sammy_hidden)
+
+print('Sammy extended with its hidden values:', sammy)
+Sammy Dict Keys: dict_keys(['username', 'online', 'followers'])
+List of sammy_keys ['username', 'online', 'followers']
+--
+Sammy Dict Values: dict_values(['sammy', True, 42])
+Sammy Dict Values as a list: ['sammy', True, 42]
+--
+Sammy Dict key, value pairs: dict_items([('username', 'sammy'), ('online', True), ('followers', 42)])
+Sammy Dict key, value pairs as a list: [('username', 'sammy'), ('online', True), ('followers', 42)]
+--
+Sammy followers value: 42
+Same as: 42
+--
+Sammy extended with its hidden values: {'username': 'sammy', 'online': True, 'followers': 42, 'pwd': 'qwerty', 'location': 'Toronto, Ontario'}
+
+iTERATING THROUGH A DICT
+
+We will be taking advantage of three iteration methods
+iterating the keys
+iterating the values
+iterating the key, value pairs by unpacking
+# Iteration Example 1: Keys
+sammy = {
+    'username': 'sammy',
+    'online': True,
+    'followers': 42
+}
+
+for k in sammy.keys():
+    print('Current key:', k)
+print('--\n')
+
+# Iteration Example 2: Values
+
+for v in sammy.values():
+    print('Current value:', v)
+print('--\n')
+
+# Iteration Example 3: Key, Value Pair
+
+for k, v in sammy.items():
+    print('Current Key:', k)
+    print('Current Value:', v)
+    print()
+
+Current key: username
+Current key: online
+Current key: followers
+--
+
+Current value: sammy
+Current value: True
+Current value: 42
+--
+
+Current Key: username
+Current Value: sammy
+
+Current Key: online
+Current Value: True
+
+Current Key: followers
+Current Value: 42
+
+TURNING OTHER DATA TYPES INTO DICT. TO DO THIS WE GOTTA SEPCIFY WHERE THE KEYS AND WHERE THE VALUES .
+
+# dict() Example
+
+example_data = [
+    ('one', 3),
+    ('two', 3),
+    ('three', 5)
+]
+
+data_dict = dict(example_data)
+print('data_dict:', data_dict)
+print('--')
+
+# Dictionary Comprehension
+# Goal: Take string numerals and assign them with their integer square
+# - keys : string numerals
+# - values: integer squares
+
+example_data2 = ['1', '2', '3', '4', '5']
+
+data2_dict = {x : int(x)**2 for x in example_data2}
+
+print('data2_dict:', data2_dict)
+data_dict: {'one': 3, 'two': 3, 'three': 5}
+--
+data2_dict: {'1': 1, '2': 4, '3': 9, '4': 16, '5': 25}
 
